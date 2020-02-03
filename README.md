@@ -9,3 +9,6 @@ Changes:
  - I didn't have the Stamp logo so I just included a plaintext 'Stamp' in the corner for filler. 
 
 If I were to critique the design, I'd question the header and footer- whether contacts/contact needs to be placed twice on the screen. Otherwise, I think it is sleek, simple and effective. 
+
+![screenshot](https://imgur.com/ykqADPo.png)
+![screenshot 2](https://i.imgur.com/3AysrkP.png)
