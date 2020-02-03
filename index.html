@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta name="referrer" content="origin">
+		<meta charset= "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id = "main">
+		<div id = "header">
+			 <span id="logo"> Stamp </span>
+			 <span id="nav-bar"> <a href = "#">  About </a> <a href = "#"> Integrations </a><a href = "#"> Pricing</a><a href = "#"> Contacts </a></span>
+			 <div id = "menu">
+			 	<div class="burger" onclick="toggleMenu(this)">
+				 	<div class = "bar"> </div> 
+				 	<div class = "bar"> </div> 
+				 	<div class = "bar"> </div> 
+			 	</div>
+			 	<div id="dropdown">
+			 		<div>  </div> 
+			 		<div> About </div> 
+				 	<div> Integrations </div> 
+				 	<div> Pricing </div> 
+				 	<div> Contacts </div> 
+			 	</div>
+			 </div>
+		</div>
+		<div id  = "container"> 
+			<div class="content" id="heading"> 
+				<h1> Simple Way to Organize Your Inspirations </h1>
+				<span> I think what motivates people is not great hate, but great love for other people. </span>
+			</div>
+			<div class="content" id="form">
+				<div id="cta">SIGN UP FOR FREE </div>
+				<form id="signup">
+					<div class="input-wrap" > <input value="Name"> </input> </div>
+					<div class="input-wrap" > <input value="E-mail">  </input> </div>
+					<div class="input-wrap" > 
+						<input type="password" id="password" value="Password"> </input> 
+						<i id="showpass" onclick="showPass()"> x </i> 
+					</div> 
+					
+				</form>
+				<button> Sign up > </button>
+
+				<div id="tos">By clicking 'Sign up' I agree to our <a href="#"> Terms of Service </a></div>
+			</div>
+		</div>
+		<div id = "footer"> 
+			 <span id="copyright">  © 2016 Stamp. All Rights Reserved </span>
+			 <span id="foot-nav"> <a href = "#">  CONTACT </a> <a href = "#"> HELP </a><a href = "#"> TERMS OF USE </a> <a href = "#"> PRIVACY POLICY </a>
+		</div>
+	</div>
+</body>
+</html>
+
+<style>
+	html, body, #main{
+		width: 100%;
+		min-height: 100%;
+		margin:0px;
+		font-family: 'Roboto', sans-serif;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+	}
+	a:hover{
+		color: #f7c223;
+	}
+	#main{
+		background-image: url(background.jpg);
+		background-size: cover;
+		display: flex;
+		flex-flow: row wrap;
+		color: white;
+		overflow: hidden;
+	}
+	#header, #footer{
+		padding: 15px 20px 10px 5px;
+		display: flex;
+		width: 100%;
+		height: 8vh;
+		justify-content: center;
+	}
+
+	#logo{
+		flex: 0 5%;
+	}
+	#nav-bar{
+		text-align: center;
+		font-weight: 300;
+		font-size: 14px;
+		flex: 0 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#nav-bar a{
+		margin: 0px 20px 0px 20px;
+	}
+	#menu{
+		flex: 0 5%;
+		text-align: right;
+		height: 100%;
+	}
+	.burger{
+		z-index: 10;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+	}
+	.bar{
+		width: 100%;
+		margin: 4px 0px;
+		height: 2px;
+		background-color: white;
+		transition: .4s;
+	}
+
+	.change .bar:nth-child(1){
+		 -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  		transform: rotate(-45deg) translate(-3px, 2px) ;
+	}
+	.change .bar:nth-child(2){
+		opacity: 0;
+	}
+	.change .bar:nth-child(3){
+	   -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+		transform: rotate(45deg) translate(-6px, -6px) ;
+	}
+
+	.burger:hover .bar{
+		background-color: #f7c223;
+	}
+	#dropdown{
+		border-radius: 2px;
+		overflow: hidden;
+		width: 150px;
+		height: 0px;
+		position: absolute;
+		right: 25px;
+		top: -2px;
+		background-color: #2c99ed;
+		transition: .5s;
+	}
+	#dropdown div:nth-child(1){
+		padding-top: 10px;
+	}
+	#dropdown div{
+		font-size: 15px;
+		padding-top: 10px;
+		height: 30px;
+		text-align: center;
+		transition: .3s;
+	}
+	#dropdown div:nth-child(1):hover{
+		background-color: #2c99ed;
+	}
+	#dropdown div:hover{
+
+		font-size: 18px;
+		background-color: #f7c223;
+		color: white;
+	}
+	div#dropdown.change{
+		height: 220px;
+	}
+	#container{
+		width: 100%;
+		min-height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row wrap;
+	}
+	.content{
+		margin: 0px 15px 0px 15px;
+		max-height: 50vh;
+		overflow: hidden;
+		min-width: 300px;
+	}
+	#heading{
+		flex: 0 35%;
+	}
+	#form{
+		flex: 0 30%;
+	}
+	#heading h1{
+		margin-top:15px;
+		font-size: 45px;
+		margin-bottom: .33em;
+	}
+	#heading span{
+		font-size: 15px;
+		opacity: .65;
+	}
+	#signup{
+		border-top-color: rgba(204,204,204, .6);
+		border-radius: 2px;
+	    border-top-style: solid;
+	    border-top-width: 1px;
+	    border-right-color: rgba(204,204,204, .6);
+	    border-right-style: solid;
+	    border-right-width: 1px;
+	    border-bottom-color: rgba(204,204,204, .6);
+	    border-bottom-style: solid;
+	    border-bottom-width: 0px;
+	    border-left-color: rgba(204,204,204, .6);
+	    border-left-style: solid;
+	    border-left-width: 1px;
+		overflow: hidden;
+
+	}
+	#cta{
+		letter-spacing: 2px;
+		text-align: center;
+		font-weight: 400;
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	#tos{
+		font-size: 10px;
+		text-align: center;
+		opacity: .60;
+		margin-top:15px;
+	}
+	#signup .input-wrap{
+		font-size: 12px;
+		color: white;
+		background-color: rgba(204,204,204, .15);
+		padding: 15px 10px 5px 10px;
+		height: 25px;
+	    border-bottom-color: rgba(204,204,204, .6);
+	    border-bottom-style: solid;
+	    border-bottom-width: 1px;
+	    border-left-color: rgba(204,204,204, .6);
+	    border-left-style: solid;
+	    border-left-width: 0px;
+	}
+	input{
+		color: white;
+		background-color: transparent;
+		border:none;
+		opacity: .85;
+	}
+	input:focus{
+		outline: none;
+		opacity: 1.0;
+	}
+	#signup .input-wrap:nth-last-child(1){
+		border: 0px;
+	}
+	#form button{
+		width: 100%;
+		height: 45px;
+		margin: 0px;
+		border: none;
+		color: white;
+		background-color: #2c99ed;
+		border: 1px #2c99ed solid;
+		border-radius: 0px 0px 5px 5px;
+		transition: .3s;
+	}
+	#signup input:nth-child(0), input:nth-child(1){
+		width: 100%;
+	}
+	#password, #showpass{
+		display: inline-block;
+	}
+	#password{
+		text-align: left;
+		width: calc(100% - 60px);
+	}
+	#showpass{
+		width: 50px;
+		text-align:right;
+		transition: .3s;
+	}
+	#showpass:hover{
+		color: #2c99ed;
+	}
+	#form button:hover{
+		font-size: 15px;
+		background-color: #f7c223;
+		color: white;
+		border-color: #f7c223;
+	}
+
+	#copyright{
+		opacity: .85;
+		padding-left: 20px;
+		font-size: 10px;
+		width: 20%;
+	}
+	#foot-nav{
+		letter-spacing: 2px;
+		width: 80%;
+		float: right;
+		text-align: right;
+		font-weight: 400;
+    	font-size: 10px;
+    	padding-bottom: 10px;
+    	padding-right: 25px;
+	}
+	#foot-nav a{
+		margin: 0px 10px 0px 10px;
+	}
+
+	@media only screen and (max-width: 450px) {
+		#heading{
+			text-align: center;
+		}
+		#nav-bar{
+			display: none;
+		}
+		
+		#menu{
+			margin-left:200px;
+			float: right;
+		}
+		.burger{
+			width: 40px;
+			height: 40px;
+		}
+		.bar{
+			height: 5px;
+			margin: 8px 0px;
+			height: 4px;
+		}
+		.change .bar:nth-child(1){
+			 -webkit-transform: rotate(-45deg) translate(-11px, 7px) ;
+		}
+		.change .bar:nth-child(2){
+			opacity: 0;
+		}
+		.change .bar:nth-child(3){
+		   -webkit-transform: rotate(45deg) translate(-7px, -7px) ;
+		}
+		#dropdown{
+			width: 175px;
+			right: 40px;
+			top: -2px;
+		}
+		#dropdown div:nth-child(1){
+			padding-top: 35px;
+		}
+		div#dropdown.change{
+			height: 250px;
+		}
+		.content{
+			margin-top: 30px;
+		}
+		#footer{
+			flex-flow: row wrap;
+		}
+		#footer span{
+			margin: 0px;
+			width: 100%;
+		}
+	}
+</style>
+
+<script>
+	function toggleMenu(el){
+		el.classList.toggle("change");
+		document.getElementById('dropdown').classList.toggle("change");
+	}
+	function showPass(){
+		var x = document.getElementById("password");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	}
+</script>
