@@ -1,5 +1,7 @@
 # LandingPageSample
 
+Live version here: https://suchiroll.github.io/projects/landingpage/index.html
+
 I took a few liberties with the design, to accomodate for a few bits of info I didn't have or to make the design more cohesive. 
 
 Changes:
